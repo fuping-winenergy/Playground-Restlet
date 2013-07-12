@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="Restlet Playground" basedir="." default="compile">
+
+	<!-- set classpath -->
+	<path id="classpath">
+		<fileset dir="src/lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="build/class" />
+	</path>
+
+	<!-- compile the project engine and copy the spring configuration files -->
+	<target name="compile" depends="create">
+		<!-- compile -->
+		<javac destdir="build/class" includeantruntime="false">
+			<src path="src/java" />
+			<classpath refid="classpath" />
+		</javac>
+
+		<!-- copy spring configuration files *.xml -->
+		<copy overwrite="yes" todir="build/class">
+			<fileset dir="src/conf" includes="**/*" />
+		</copy>
+	</target>
+
+	<!-- create build directories -->
+	<target name="create" depends="clean">
+		<mkdir dir="build" />
+		<mkdir dir="build/class" />
+	</target>
+
+	<!-- delete two outupt folders -->
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+
+</project>

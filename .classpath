@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="lib" path="src/lib/asm-3.3.jar"/>
 	<classpathentry kind="lib" path="src/lib/cglib-2.2.2.jar"/>
 	<classpathentry kind="lib" path="src/lib/commons-logging-1.1.1.jar"/>
